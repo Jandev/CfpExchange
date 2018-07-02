@@ -2,6 +2,9 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "resourcegroup": {
+      "value": "cfpexchange"
+    },
     "hostingPlanName": {
       "value": "cfpexchange"
     },
@@ -19,6 +22,32 @@
     },
     "websiteName": {
       "value": "cfpexchange"
+    },
+    "AD.TenantId": {
+      "value": "YourTenantId"
+    },
+    "AD.ObjectId": {
+      "value": "YourAADObjectID"
+    },
+    "servicebusNamespace": {
+      "value": "cfpexchange-bus"
+    },
+    "serviceBusQueueName": {
+      "value": "eventimages"
+    },
+    "vaultName": {
+      "value": "cfpexchange-vault"
+    },
+    "servicebusQueueConnectionString": {
+      "reference": {
+        "keyVault": {
+          "id": "[resourceId(subscription().subscriptionId,  parameters('resourcegroup'), 'Microsoft.KeyVault/vaults', parameters('vaultName'))]"
+        },
+        "secretName": "ServicebusQueueConnectionString"
+      }
+    },
+    "FeatureToggle.HostOwnImages": {
+      "value": false
     }
   }
 }
