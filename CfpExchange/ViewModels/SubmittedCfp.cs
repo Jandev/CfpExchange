@@ -17,6 +17,11 @@ namespace CfpExchange.ViewModels
 		[DataType(DataType.Text)]
 		public string EventTitle { get; set; }
 
+		[Required]
+		[DataType(DataType.Text)]
+		public string EventTags { get; set; }
+
+
 		[DataType(DataType.MultilineText)]
 		public string EventDescription { get; set; }
 
@@ -46,5 +51,8 @@ namespace CfpExchange.ViewModels
 
 		[DataType(DataType.Text)]
 		public string SubmittedByName { get; set; }
+
+		[DataType(DataType.Text)]
+		public string EventTwitterHandle { get; set; }
 	}
 }
