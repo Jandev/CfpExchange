@@ -32,22 +32,50 @@
     "servicebusNamespace": {
       "value": "cfpexchange-bus"
     },
-    "serviceBusQueueName": {
-      "value": "eventimages"
-    },
     "vaultName": {
       "value": "cfpexchange-vault"
     },
-    "servicebusQueueConnectionString": {
-      "reference": {
-        "keyVault": {
-          "id": "[resourceId(subscription().subscriptionId,  parameters('resourcegroup'), 'Microsoft.KeyVault/vaults', parameters('vaultName'))]"
-        },
-        "secretName": "ServicebusQueueConnectionString"
-      }
-    },
-    "FeatureToggle.HostOwnImages": {
+    "FeatureToggle:HostOwnImages": {
       "value": false
+    },
+    "templateBaseUri": {
+      "value": "https://the-base-uri-where-your-nested-templates-are-stored/"
+    },
+    "storageAccountName": {
+      "value": "cfpexchangestorage"
+    },
+    "functionAppName": {
+      "value": "cfpexchange-functions"
+    },
+    "AdminEmailaddress": {
+      "value": "cfpexchange@geraldversluis.nl"
+    },
+    "EmailSettings:ApiKey": {
+      "value": "YourAPIKey"
+    },
+    "EmailSettings:ApiUri": {
+      "value": "YorAPIUri"
+    },
+    "EmailSettings:From": {
+      "value": "No-Reply CFP Exchange <no-reply@cfp.exchange>"
+    },
+    "MapsApiKey": {
+      "value": "YourAzureMapsApiKey"
+    },
+    "TwitterConsumerKey": {
+      "value": "YourConsumerKey"
+    },
+    "TwitterConsumerSecret": {
+      "value": "YourConsumerSecret"
+    },
+    "TwitterOAuthToken": {
+      "value": "YourOAuthToken"
+    },
+    "TwitterOAuthTokenSecret": {
+      "value": "YourOAuthTokenSecret"
+    },
+    "AppInsightsInstrumentationKey": {
+      "value": "AppInsightsInstrumentationKey"
     }
   }
 }
